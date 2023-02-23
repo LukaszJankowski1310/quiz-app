@@ -12,7 +12,7 @@ function Quiz(props) {
     const [loading, setLoading] = useState(true)
     const linkAPI = `https://opentdb.com/api.php?amount=${props.numberOfQuestions}`
 
-
+    console.log(questions)
     useEffect(() => {
         fetch(linkAPI)
         .then(res => res.json())
@@ -98,7 +98,7 @@ function submitAnswers() {
     else {
         // info - answer for all question
         setNotFullFilledQuizSubmitted(true)
-        alert("zaznacz wszystkie odpowiedzi")
+        alert("You left the fields blank")
     }
 }
 
@@ -173,7 +173,7 @@ function submitAnswers() {
             <div className='quiz_summary'>
                 {hasSubmitted ? <button onClick={props.newQuiz} className="button quiz_button">Start new quiz</button>    :  
                 <button onClick={submitAnswers} className="button quiz_button">Submit answers</button> }
-                {hasSubmitted && <span className='quiz__result'>{`Wynik : ${countResult()}/${questions.length}`}</span>}
+                {hasSubmitted && <span className='quiz__result'>{`Result : ${countResult()}/${questions.length}`}</span>}
             </div>
 
             

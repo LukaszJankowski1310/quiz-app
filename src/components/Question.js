@@ -32,7 +32,7 @@ function Question(props) {
     // let questionTextSyles = props.notFullFilledQuizSubmitted ? {} : {}
     return(
         <div className='question_container'>
-            {props.notFullFilledQuizSubmitted && !markedQuestion &&  <h4 style={{color:"red"}}>Wypełnij to pole</h4>}
+            {props.notFullFilledQuizSubmitted && !markedQuestion &&  <h4 style={{color:"red"}}>Fill in this field</h4>}
             <h3 className='question'>{`${props.number}. ${questionText}`}</h3>
             <div className='answers_container'>
               {answers_components}

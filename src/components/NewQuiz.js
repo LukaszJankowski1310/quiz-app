@@ -23,8 +23,10 @@ function NewQuiz(props) {
                 <option value={25}>25</option>
                 <option value={30}>30</option>
             </select>
-
+            {/* choosing kategory */}
         </div>
+
+     
 
         </div>
     )
