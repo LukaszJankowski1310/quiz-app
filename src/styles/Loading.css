@@ -7,12 +7,26 @@
     gap: 30px;
 }
 
-.loading__circle {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: transparent;
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
-    /* border-left: 5px solid black; */
+.loading__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: #293264;
 }
+
+.loading__circle {
+    border: 6px solid transparent;
+    border-top: 6px solid #293264;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    animation: spin 2s linear infinite;
+    /* transform:scale(3) */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

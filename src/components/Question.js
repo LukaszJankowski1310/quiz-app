@@ -33,7 +33,7 @@ function Question(props) {
     return(
         <div className='question_container'>
             {props.notFullFilledQuizSubmitted && !markedQuestion &&  <h4 style={{color:"red"}}>Wypełnij to pole</h4>}
-            <h3 className='question'>{questionText}</h3>
+            <h3 className='question'>{`${props.number}. ${questionText}`}</h3>
             <div className='answers_container'>
               {answers_components}
             </div>

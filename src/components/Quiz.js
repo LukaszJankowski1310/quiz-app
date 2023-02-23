@@ -10,9 +10,11 @@ function Quiz(props) {
     const [notFullFilledQuizSubmitted, setNotFullFilledQuizSubmitted]  = useState(false)
 
     const [loading, setLoading] = useState(true)
+    const linkAPI = `https://opentdb.com/api.php?amount=${props.numberOfQuestions}`
+
 
     useEffect(() => {
-        fetch("https://opentdb.com/api.php?amount=10")
+        fetch(linkAPI)
         .then(res => res.json())
         .then(data => {
             console.log("zapytanie do API")
@@ -59,7 +61,7 @@ function Quiz(props) {
 
             setTimeout(() => {
                setLoading(false)
-            }, 1000);
+            }, 2000);
            
             setQuestions(questionArr)
 
@@ -148,6 +150,7 @@ function submitAnswers() {
     const questionComponents = questions.map((question, index) => (
             <Question 
                 key={index}
+                number={index+1}
                 data={question} 
                 handleMarkAnswer={!hasSubmitted ? handleMarkAnswer : () => {}} 
                 submitted={hasSubmitted}   
