@@ -68,7 +68,7 @@ function Quiz(props) {
            
 
         })
-    }, [])
+    }, [linkAPI])
     
 
 
@@ -88,7 +88,7 @@ function countResult() {
 
 
 function submitAnswers() {
-    const newQuestions = []
+  
     const allMarked = questions.every(question => getMakredAns(question) !== undefined) 
 
     if (allMarked) { 
