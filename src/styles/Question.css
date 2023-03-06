@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    padding-bottom: 20px;
    
 }
 
@@ -11,10 +12,11 @@
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+    flex-wrap: wrap;
 } 
 
 .answers_container button {
-    width: 130px;
+    min-width: 130px;
     height: 40px;
     border-radius: 15px;
     color: #F5F7FB;
@@ -31,3 +33,15 @@
     /* text-align: center; */
     color: #293264;
 }
+
+@media (max-width: 640px) {
+    .answers_container {
+        gap: 10px;
+    }
+
+    .answers_container button {
+        width: 45%;       
+    }
+
+
+  }
