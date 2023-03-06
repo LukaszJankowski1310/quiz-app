@@ -7,6 +7,12 @@ function NewQuiz(props) {
         props.handleSetNumberOfQuestions(event.target.value)
     }
 
+
+    function handleRadioChange(event) {
+        console.log(event.target.value)
+        props.handleSetCategory(event.target.value);
+      };
+
     return (
         <div className="intro_quiz">
                 <h1 className="intro_quiz__heading">Quizicall </h1>
@@ -23,7 +29,48 @@ function NewQuiz(props) {
                 <option value={25}>25</option>
                 <option value={30}>30</option>
             </select>
-            {/* choosing kategory */}
+           
+            <br />
+ 
+
+
+            <label>
+                Select a category:
+                <br />
+           
+                <input
+                type="radio"
+                value="10"
+                checked={props.selectedCategory === '10'}
+                onChange={handleRadioChange}
+                />
+                Books
+                <br />
+                <input
+                type="radio"
+                value="23"
+                checked={props.selectedCategory === "23"  }
+                onChange={handleRadioChange}
+                />
+                History
+                <br />
+                <input
+                type="radio"
+                value="24"
+                checked={props.selectedCategory === '24'}
+                onChange={handleRadioChange}
+                />
+                 Politics
+                 <br />
+                <input
+                type="radio"
+                value="9"
+                checked={props.selectedCategory === '9'}
+                onChange={handleRadioChange}
+                />
+                 General knowledge
+            </label>
+
         </div>
 
      

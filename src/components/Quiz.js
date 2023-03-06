@@ -10,7 +10,7 @@ function Quiz(props) {
     const [notFullFilledQuizSubmitted, setNotFullFilledQuizSubmitted]  = useState(false)
 
     const [loading, setLoading] = useState(true)
-    const linkAPI = `https://opentdb.com/api.php?amount=${props.numberOfQuestions}`
+    const linkAPI = `https://opentdb.com/api.php?amount=${props.numberOfQuestions}&category=${props.selectedCategory}`
 
     console.log(questions)
     useEffect(() => {
